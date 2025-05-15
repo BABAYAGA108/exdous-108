@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>exdous peadiatrics</title>
-    <link href="photos/styles.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Exodus Pediatrics</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="photos/styles.css" as="style">
+    <link rel="preload" href="photos/logo-626(1).png" as="image">
+    
+    <!-- Preconnect to CDN -->
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
+    
+    <!-- Inline critical CSS -->
     <style>
+        /* Critical above-the-fold styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            background-color: #f7fafc;
+        }
+        
         /* Smooth mobile menu animation */
         #mobileMenu {
             transition: all 0.3s ease;
@@ -22,7 +37,23 @@
             position: relative;
             z-index: 5;
         }
+        
+        /* Basic layout styles to prevent layout shift */
+        nav, main, section, footer {
+            display: block;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
     </style>
+    
+    <!-- Load non-critical CSS asynchronously -->
+    <link href="photos/styles.css" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="photos/styles.css" rel="stylesheet"></noscript>
+    
+    <!-- Load Tailwind with defer -->
+    <script src="https://cdn.tailwindcss.com" defer></script>
 </head>
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
   <div class="container mx-auto px-4 py-8"></div>
@@ -32,7 +63,12 @@
       <div class="container mx-auto px-4 py-2 flex justify-between items-center">
         <!-- Logo -->
         <div class="flex items-center">
-          <img src="photos/logo-626(1).png" alt="Abstract blue and green geometric logo resembling interconnected loops forming a symmetrical floral or medical cross shape, conveying a sense of care and professionalism, on a white background" class="h-10 w-10 mr-2">
+          <img src="photos/logo-626(1).png" 
+               alt="Exodus Pediatrics logo"
+               width="40" 
+               height="40"
+               class="h-10 w-10 mr-2"
+               loading="eager">
           <span class="text-xl font-semibold">Exodus Pediatrics</span>
         </div>
         
@@ -97,7 +133,12 @@
         <div class="flex flex-col md:flex-row items-center justify-between mb-12 lg:mb-16 lg:px-8 gap-8">
           <!-- Left Side Content - Image -->
           <div class="w-full md:w-1/2 p-4">
-            <img src="photos/view-luxurious-hotel-interior-space.jpg" alt="Luxurious Hotel Interior" class="rounded-lg shadow-lg w-full object-cover h-64">
+            <img src="photos/view-luxurious-hotel-interior-space.jpg" 
+                 alt="Luxurious Hotel Interior" 
+                 class="rounded-lg shadow-lg w-full object-cover h-64"
+                 loading="lazy"
+                 width="600"
+                 height="400">
           </div>
       
           <!-- Right side content - Text -->
@@ -122,7 +163,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Postnatal Care Card -->
           <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 flex flex-col h-full">
-            <img src="photos/full-shot-mother-holding-cute-baby.jpg" alt="Postnatal care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+            <img src="photos/full-shot-mother-holding-cute-baby.jpg" 
+                 alt="Postnatal care" 
+                 class="rounded-full w-48 h-48 object-cover mx-auto mb-4"
+                 loading="lazy"
+                 width="192"
+                 height="192">
             <h3 class="text-xl font-semibold mb-2 text-center">Postnatal Care</h3>
             <div class="text-center flex-grow">
               <p class="text-gray-700 mb-4">Our postnatal care includes medical check-ups, emotional support, and breastfeeding assistance to help new mothers transition smoothly into motherhood.</p>
@@ -131,9 +177,13 @@
           </div>
       
           <!-- Pediatric Care Card -->
-          <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100
-           flex flex-col h-full">
-            <img src="photos/family-three-spending-time-together-outdoors-father-s-day.jpg" alt="Pediatric care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+          <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 flex flex-col h-full">
+            <img src="photos/family-three-spending-time-together-outdoors-father-s-day.jpg" 
+                 alt="Pediatric care" 
+                 class="rounded-full w-48 h-48 object-cover mx-auto mb-4"
+                 loading="lazy"
+                 width="192"
+                 height="192">
             <h3 class="text-xl font-semibold mb-2 text-center">Pediatric Care</h3>
             <div class="text-center flex-grow">
               <p class="text-gray-700 mb-4">Our pediatric care focuses on the physical, emotional, and social health of children from birth to young adulthood.</p>
@@ -143,7 +193,12 @@
       
           <!-- Maternity Care Card -->
           <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 flex flex-col h-full">
-            <img src="photos/cute-black-baby-home-with-parents.jpg" alt="Maternity care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+            <img src="photos/cute-black-baby-home-with-parents.jpg" 
+                 alt="Maternity care" 
+                 class="rounded-full w-48 h-48 object-cover mx-auto mb-4"
+                 loading="lazy"
+                 width="192"
+                 height="192">
             <h3 class="text-xl font-semibold mb-2 text-center">Parental Care</h3>
             <div class="text-center flex-grow">
               <p class="text-gray-700 mb-4">Offering comprehensive prenatal care and guidance to ensure a healthy pregnancy and delivery for expecting mothers.</p>
@@ -166,7 +221,12 @@
               <!-- Testimonial 1 -->
               <div class="min-w-full px-4">
                 <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                  <img src="photos/medium-shot-african-mother-holding-little-girl.jpg" alt="Sarah J." class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+                  <img src="photos/medium-shot-african-mother-holding-little-girl.jpg" 
+                       alt="Sarah J." 
+                       class="rounded-full w-48 h-48 object-cover mx-auto mb-4"
+                       loading="lazy"
+                       width="192"
+                       height="192">
                   <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
                   <blockquote class="text-lg italic text-gray-700 mb-6">
                     "The care my newborn received was exceptional. The staff treated us like family and made our first weeks as parents so much easier."
@@ -183,7 +243,12 @@
               <!-- Testimonial 2 -->
               <div class="min-w-full px-4">
                 <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                  <img src="photos/ayodele-adeniyi-yA8Ha6sEjbA-unsplash.jpg" alt="Michael T." class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+                  <img src="photos/ayodele-adeniyi-yA8Ha6sEjbA-unsplash.jpg" 
+                       alt="Michael T." 
+                       class="rounded-full w-48 h-48 object-cover mx-auto mb-4"
+                       loading="lazy"
+                       width="192"
+                       height="192">
                   <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
                   <blockquote class="text-lg italic text-gray-700 mb-6">
                     "Our pediatrician went above and beyond to explain everything in terms we could understand. Our child actually looks forward to visits!"
@@ -200,7 +265,12 @@
               <!-- Testimonial 3 -->
               <div class="min-w-full px-4">
                 <div class="bg-white p-8 rounded-lg shadow-md text-center">
-                  <img src="photos/bave-pictures-VdXxxj61SGA-unsplash.jpg" alt="Priya K." class="w-48 h-48 rounded-full object-cover mx-auto mb-4">
+                  <img src="photos/bave-pictures-VdXxxj61SGA-unsplash.jpg" 
+                       alt="Priya K." 
+                       class="w-48 h-48 rounded-full object-cover mx-auto mb-4"
+                       loading="lazy"
+                       width="192"
+                       height="192">
                   <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
                   <blockquote class="text-lg italic text-gray-700 mb-6">
                     "After a difficult pregnancy, the postnatal support made all the difference. I couldn't have asked for more compassionate care."
@@ -270,13 +340,13 @@
             <p class="mb-4 text-blue-100">Providing compassionate care for children and expecting mothers since 2010.</p>
             <div class="flex space-x-4">
               <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Facebook page">
-                <img src="svg/facebook-svgrepo-com.svg" alt="Facebook" class="w-6 h-6">
+                <img src="svg/facebook-svgrepo-com.svg" alt="Facebook" class="w-6 h-6" loading="lazy" width="24" height="24">
               </a>
               <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Twitter page">
-                <img src="svg/twitter-social-logotype-svgrepo-com.svg" alt="Twitter" class="w-6 h-6">
+                <img src="svg/twitter-social-logotype-svgrepo-com.svg" alt="Twitter" class="w-6 h-6" loading="lazy" width="24" height="24">
               </a>
               <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Instagram page">
-                <img src="svg/instagram-svgrepo-com.svg" alt="Instagram" class="w-6 h-6">
+                <img src="svg/instagram-svgrepo-com.svg" alt="Instagram" class="w-6 h-6" loading="lazy" width="24" height="24">
               </a>
             </div>
           </div>
@@ -341,14 +411,23 @@
       </div>
     </footer>
 
+  <!-- Deferred JavaScript -->
   <script>
-    // Mobile menu toggle
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-    
-    // Testimonial carousel
+    // Mobile menu toggle - loaded after DOM is ready
     document.addEventListener('DOMContentLoaded', function() {
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+      });
+      
+      // Close mobile menu when a link is clicked
+      document.querySelectorAll('#mobile-menu a').forEach(link => {
+        link.addEventListener('click', () => {
+          document.getElementById('mobile-menu').classList.add('hidden');
+        });
+      });
+      
+      // Testimonial carousel
       const slides = document.querySelector('#testimonial-slides .flex');
       const prevBtn = document.getElementById('prev-testimonial');
       const nextBtn = document.getElementById('next-testimonial');
@@ -395,28 +474,21 @@
         currentIndex = (currentIndex + 1) % totalSlides;
         updateCarousel();
       }, 5000);
-    });
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          }
+        });
       });
     });
-    // Close mobile menu when a link is clicked
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('mobile-menu').classList.add('hidden');
-  });
-});
-
   </script>
 </body>
 </html>
