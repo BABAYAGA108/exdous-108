@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exdous peadiatrics</title>
+    <link href="photos/styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Smooth mobile menu animation */
+        #mobileMenu {
+            transition: all 0.3s ease;
+            max-height: 0;
+            overflow: hidden;
+        }
+        #mobileMenu.open {
+            max-height: 500px;
+        }
+        
+        /* Fix for contact section positioning */
+        #contact-section {
+            position: relative;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class="container mx-auto px-4 py-8"></div>
+    
+    <!-- Navbar -->
+    <nav role="navigation" class="relative z-10 bg-white shadow-md">
+      <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="photos/logo-header3.png" alt="Abstract blue and green geometric logo resembling interconnected loops forming a symmetrical floral or medical cross shape, conveying a sense of care and professionalism, on a white background" class="h-10 w-10 mr-2">
+          <span class="text-xl font-semibold">Exodus Pediatrics</span>
+        </div>
+        
+        <!-- Desktop Menu -->
+        <div class="hidden md:block">
+          <ul class="items-center justify-center space-x-8 flex">
+            <li><a href="index.html" class="text-blue-500 hover:text-blue-700">Home</a></li>
+            <li><a href="about.html" class="text-blue-500 hover:text-blue-700">About</a></li>
+            <li><a href="contact.html" class="text-blue-500 hover:text-blue-700">Contact</a></li>
+            <li><button type="button" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Login</button></li>
+            <li><button type="button" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-700">Sign up</button></li>
+          </ul>
+        </div>
+        
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden flex items-center ml-4">
+          <button type="button" id="menu-toggle" class="text-gray-500 focus:outline-none" title="Toggle Menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="hidden md:hidden px-4 py-4 bg-white shadow-lg">
+        <ul class="flex flex-col space-y-4 items-stretch">
+          <li>
+            <a href="index.html" class="block w-full text-center py-3 text-blue-600 hover:bg-blue-50 rounded transition">Home</a>
+          </li>
+          <li>
+            <a href="about.html" class="block w-full text-center py-3 text-blue-600 hover:bg-blue-50 rounded transition">About</a>
+          </li>
+          <li>
+            <a href="contact.html" class="block w-full text-center py-3 text-blue-600 hover:bg-blue-50 rounded transition">Contact</a>
+          </li>
+          <li class="pt-2 border-t border-gray-100">
+            <button type="button" class="w-full bg-blue-600 text-white px-4 py-3 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition">
+              Login
+            </button>
+          </li>
+          <li>
+            <button type="button" class="w-full bg-green-600 text-white px-4 py-3 rounded-lg hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition">
+              Sign Up
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    
+    <!-- Main Content -->
+    <main class="flex-grow p-4">
+      <div class="container mx-auto">
+        <h2 class="text-2xl font-bold mb-4">Main Content Area</h2>
+        <p class="text-gray-700">This is where your primary content goes.</p>
+      </div>
+    </main>
+    
+    <!-- About Section -->
+    <section>
+      <div class="container mx-auto py-8">
+        <div class="flex flex-col md:flex-row items-center justify-between mb-12 lg:mb-16 lg:px-8 gap-8">
+          <!-- Left Side Content - Image -->
+          <div class="w-full md:w-1/2 p-4">
+            <img src="photos/view-luxurious-hotel-interior-space.jpg" alt="Luxurious Hotel Interior" class="rounded-lg shadow-lg w-full object-cover h-64">
+          </div>
+      
+          <!-- Right side content - Text -->
+          <div class="w-full md:w-1/2 p-4 space-y-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800">About Exodus Pediatrics</h2>
+            <p class="text-lg leading-relaxed text-gray-700">
+              At Exodus Pediatrics, we are passionate about supporting families through every stage of early life. Our mission is to provide compassionate, high-quality care for children and maternity moms in a safe and nurturing environment.
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700">
+              We believe in personalized care tailored to meet the unique needs of your family, ensuring both mothers and their little ones can thrive and grow.
+            </p>
+            <button type="button" class="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+              Learn More About Our Care
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="container mx-auto py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Postnatal Care Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 flex flex-col h-full">
+            <img src="photos/full-shot-mother-holding-cute-baby.jpg" alt="Postnatal care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2 text-center">Postnatal Care</h3>
+            <div class="text-center flex-grow">
+              <p class="text-gray-700 mb-4">Our postnatal care includes medical check-ups, emotional support, and breastfeeding assistance to help new mothers transition smoothly into motherhood.</p>
+            </div>
+            <button type="button" class="mt-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mx-auto">Learn More</button>
+          </div>
+      
+          <!-- Pediatric Care Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100
+           flex flex-col h-full">
+            <img src="photos/family-three-spending-time-together-outdoors-father-s-day.jpg" alt="Pediatric care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2 text-center">Pediatric Care</h3>
+            <div class="text-center flex-grow">
+              <p class="text-gray-700 mb-4">Our pediatric care focuses on the physical, emotional, and social health of children from birth to young adulthood.</p>
+            </div>
+            <button class="mt-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mx-auto">Learn More</button>
+          </div>
+      
+          <!-- Maternity Care Card -->
+          <div class="bg-white p-6 rounded-lg shadow-md hover:bg-gray-100 flex flex-col h-full">
+            <img src="photos/cute-black-baby-home-with-parents.jpg" alt="Maternity care" class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+            <h3 class="text-xl font-semibold mb-2 text-center">Parental Care</h3>
+            <div class="text-center flex-grow">
+              <p class="text-gray-700 mb-4">Offering comprehensive prenatal care and guidance to ensure a healthy pregnancy and delivery for expecting mothers.</p>
+            </div>
+            <button class="mt-auto bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 mx-auto">Learn More</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="bg-blue-50 py-16 px-4">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center text-blue-800 mb-12">What Families Say About Us</h2>
+        
+        <!-- Testimonial Carousel -->
+        <div class="relative max-w-4xl mx-auto">
+          <!-- Testimonial Slides -->
+          <div id="testimonial-slides" class="overflow-hidden">
+            <div class="flex transition-transform duration-500 ease-in-out">
+              <!-- Testimonial 1 -->
+              <div class="min-w-full px-4">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                  <img src="photos/medium-shot-african-mother-holding-little-girl.jpg" alt="Sarah J." class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+                  <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                  <blockquote class="text-lg italic text-gray-700 mb-6">
+                    "The care my newborn received was exceptional. The staff treated us like family and made our first weeks as parents so much easier."
+                  </blockquote>
+                  <div class="flex items-center justify-center mt-4">
+                    <div>
+                      <p class="font-semibold">Sarah J.</p>
+                      <p class="text-sm text-gray-500">New Mother</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 2 -->
+              <div class="min-w-full px-4">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                  <img src="photos/ayodele-adeniyi-yA8Ha6sEjbA-unsplash.jpg" alt="Michael T." class="rounded-full w-48 h-48 object-cover mx-auto mb-4">
+                  <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                  <blockquote class="text-lg italic text-gray-700 mb-6">
+                    "Our pediatrician went above and beyond to explain everything in terms we could understand. Our child actually looks forward to visits!"
+                  </blockquote>
+                  <div class="flex items-center justify-center">
+                    <div>
+                      <p class="font-semibold">Michael T.</p>
+                      <p class="text-sm text-gray-500">Father of 3</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Testimonial 3 -->
+              <div class="min-w-full px-4">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                  <img src="photos/bave-pictures-VdXxxj61SGA-unsplash.jpg" alt="Priya K." class="w-48 h-48 rounded-full object-cover mx-auto mb-4">
+                  <div class="text-yellow-400 text-2xl mb-4">★★★★★</div>
+                  <blockquote class="text-lg italic text-gray-700 mb-6">
+                    "After a difficult pregnancy, the postnatal support made all the difference. I couldn't have asked for more compassionate care."
+                  </blockquote>
+                  <div class="flex items-center justify-center">
+                    <div>
+                      <p class="font-semibold">Priya K.</p>
+                      <p class="text-sm text-gray-500">Expecting Mother</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Navigation Buttons -->
+          <button type="button" id="prev-testimonial" class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-blue-100" title="Previous Testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button type="button" id="next-testimonial" class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md hover:bg-blue-100" title="Next Testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+          
+          <!-- Navigation Dots -->
+          <div class="flex justify-center mt-8 space-x-2">
+            <button type="button" class="w-3 h-3 rounded-full bg-blue-200 testimonial-dot" data-index="0" title="Go to Testimonial 1"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-blue-200 testimonial-dot" data-index="1" title="Go to Testimonial 2"></button>
+            <button type="button" class="w-3 h-3 rounded-full bg-blue-200 testimonial-dot" data-index="2" title="Go to Testimonial 3"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="bg-gray-50 py-16 px-4">
+      <!-- Contact Form -->
+      <div class="container mx-auto bg-peach text-black rounded-lg shadow-lg p-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Contact Us</h2>
+        <p class="text-white font-semibold mb-4 text-center">If you have any questions or would like to schedule an appointment, please reach out to us.</p>
+        <form action="#" method="POST" class="space-y-4 max-w-2xl mx-auto">
+          <div>
+            <label for="name" class="block text-sm font-medium">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500">
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium">Message</label>
+            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+          </div>
+          <button type="submit" class="bg-white text-blue-600 hover:bg-blue-100 font-semibold py-2 px-4 rounded-lg transition duration-300 w-full">Send Message</button>
+        </form>
+      </div>
+    </section>
+    
+    <footer class="bg-blue-900 text-white py-12 px-4">
+      <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <!-- Column 1: About -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Exodus Pediatrics</h3>
+            <p class="mb-4 text-blue-100">Providing compassionate care for children and expecting mothers since 2010.</p>
+            <div class="flex space-x-4">
+              <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Facebook page">
+                <img src="svg/facebook-svgrepo-com.svg" alt="Facebook" class="w-6 h-6">
+              </a>
+              <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Twitter page">
+                <img src="svg/twitter-social-logotype-svgrepo-com.svg" alt="Twitter" class="w-6 h-6">
+              </a>
+              <a href="#" class="hover:opacity-75 transition-opacity" title="Visit our Instagram page">
+                <img src="svg/instagram-svgrepo-com.svg" alt="Instagram" class="w-6 h-6">
+              </a>
+            </div>
+          </div>
+          
+          <!-- Column 2: Quick Links -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+            <ul class="space-y-2">
+              <li><a href="index.html" class="text-blue-100 hover:text-white transition">Home</a></li>
+              <li><a href="about.html" class="text-blue-100 hover:text-white transition">About Us</a></li>
+              <li><a href="contact.html" class="text-blue-100 hover:text-white transition">Contact</a></li>
+              <li><a href="#" class="text-blue-100 hover:text-white transition">Patient Portal</a></li>
+            </ul>
+          </div>
+          
+          <!-- Column 3: Services -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Our Services</h3>
+            <ul class="space-y-2">
+              <li><a href="#" class="text-blue-100 hover:text-white transition">Pediatric Care</a></li>
+              <li><a href="#" class="text-blue-100 hover:text-white transition">Maternity Services</a></li>
+              <li><a href="#" class="text-blue-100 hover:text-white transition">Vaccinations</a></li>
+              <li><a href="#" class="text-blue-100 hover:text-white transition">24/7 Emergency</a></li>
+              <li><a href="#" class="text-blue-100 hover:text-white transition">Wellness Checkups</a></li>
+            </ul>
+          </div>
+          
+          <!-- Column 4: Contact -->
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contact Us</h3>
+            <address class="not-italic text-blue-100">
+              <p class="mb-2 flex items-start">
+                <svg class="w-5 h-5 mr-2 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                123 Care Street, Family City, FC 12345
+              </p>
+              <p class="mb-2 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                </svg>
+                (+234) 08143644993
+              </p>
+              <p class="mb-4 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                honourkalu216@gmail.com
+              </p>
+            </address>
+            <button type="button" class="bg-white text-blue-800 hover:bg-blue-100 px-6 py-2 rounded-lg font-semibold transition shadow-md hover:shadow-lg">
+              Book Appointment
+            </button>
+          </div>
+        </div>
+        
+        <!-- Copyright Section -->
+        <div class="border-t border-blue-800 mt-12 pt-8 text-center text-blue-300 text-sm">
+          <p>© 2023 Exodus Pediatrics. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a> | <a href="#" class="hover:text-white">Terms of Service</a></p>
+        </div>
+      </div>
+    </footer>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+    
+    // Testimonial carousel
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelector('#testimonial-slides .flex');
+      const prevBtn = document.getElementById('prev-testimonial');
+      const nextBtn = document.getElementById('next-testimonial');
+      const dots = document.querySelectorAll('.testimonial-dot');
+      let currentIndex = 0;
+      const totalSlides = 3;
+
+      function updateCarousel() {
+        slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update active dot
+        dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+            dot.classList.add('bg-blue-600');
+            dot.classList.remove('bg-blue-200');
+          } else {
+            dot.classList.add('bg-blue-200');
+            dot.classList.remove('bg-blue-600');
+          }
+        });
+      }
+
+      // Arrow navigation
+      nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      });
+
+      // Dot navigation
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          currentIndex = parseInt(dot.getAttribute('data-index'));
+          updateCarousel();
+        });
+      });
+
+      // Auto-rotate every 5 seconds (optional)
+      setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateCarousel();
+      }, 5000);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+});
+
+  </script>
+</body>
+</html>
